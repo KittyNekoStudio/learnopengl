@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
+
 #include <glad/glad.h>
 
 #include "shader.h"
@@ -91,6 +93,17 @@ void UseShader(Shader* shader) {
     glUseProgram(shader->ID);
 }
 
+void SetUniformBool(Shader* shader, char* name, bool value) {
+    glUniform1i(glGetUniformLocation(shader->ID, name), (int)value);
+}
+
+void SetUniformInt(Shader* shader, char* name, int value) {
+    glUniform1i(glGetUniformLocation(shader->ID, name), value);
+}
+
+void SetUniformFloat(Shader* shader, char* name, float value) {
+    glUniform1f(glGetUniformLocation(shader->ID, name), value);
+}
 void CheckCompileErrors(unsigned int shader, char type[]) {
     int success;
     char infoLog[1024];

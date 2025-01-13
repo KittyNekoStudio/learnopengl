@@ -1,12 +1,10 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 #include "shader.h"
-
-#define true 1
-#define false 0
 
 static void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
@@ -63,7 +61,7 @@ int main() {
 
 	float vertices[18] = {
 		// Positions	// Colors
-		0.5, -0.5, 1.0, 1.0f, 0.0f, 0.0f, // Bottom right
+		0.5, -0.5, 0.0, 1.0f, 0.0f, 0.0f, // Bottom right
 	   -0.5, -0.5, 0.0, 0.0f, 1.0f, 0.0f, // Bottom left
 		0.0,  0.5, 0.0,	0.0f, 0.0f, 1.0f, // Top
 	};
@@ -99,6 +97,7 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		UseShader(&myShaders);	
+		SetUniformFloat(&myShaders, "offSet", 0.5);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 

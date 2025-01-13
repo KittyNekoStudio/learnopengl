@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "glad.h": "c",
-        "glfw3.h": "c"
+        "glfw3.h": "c",
+        "shader.h": "c",
+        "stdlib.h": "c"
     }
 }
