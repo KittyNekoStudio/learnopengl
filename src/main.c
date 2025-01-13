@@ -34,7 +34,6 @@ static void setColorBlueOrRedOrGreen(GLFWwindow* window) {
 	}
 }
 
-
 int main() {
 
 	glfwInit();
