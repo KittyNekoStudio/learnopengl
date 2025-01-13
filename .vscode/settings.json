@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "glfw3.h": "c",
-        "shader.h": "c",
-        "string.h": "c"
-    }
-}
