@@ -12,12 +12,14 @@ project(myprogram C)
 
 set(MY_HEADER_FILES
     src/shader.h
+    src/stb_image.h
 )
 
 set(MY_SOURCE_FILES
     src/main.c
     src/glad.c
     src/shader.c
+    src/image.c
 )
 
 add_executable(myprogram ${MY_HEADER_FILES} ${MY_SOURCE_FILES})
@@ -31,4 +33,5 @@ target_link_libraries(myprogram
     pthread
     Xrandr
     Xi
-    dl)
+    dl
+    m)
