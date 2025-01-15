@@ -1,0 +1,413 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/llvm-mingw-64/bin/cc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is Clang, found in:
+        C:/Users/eli12/dev/glfw-3.4/CMakeFiles/3.31.3/CompilerIdC/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n"
+      binary: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/llvm-mingw-64/bin/mingw32-make.exe -f Makefile cmTC_b4973/fast
+        C:/llvm-mingw-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b4973.dir\\build.make CMakeFiles/cmTC_b4973.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n'
+        Building C object CMakeFiles/cmTC_b4973.dir/CMakeCCompilerABI.c.obj
+        C:\\llvm-mingw-64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_b4973.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_b4973.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_b4973.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+        clang version 19.1.6 (https://github.com/llvm/llvm-project.git e21dc4bd5474d04b8e62d7331362edcc5648d7e5)
+        Target: x86_64-w64-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/llvm-mingw-64/bin
+        Configuration file: C:/llvm-mingw-64/bin/x86_64-w64-windows-gnu.cfg
+         (in-process)
+         "C:/llvm-mingw-64/bin/clang-19.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n -v -fcoverage-compilation-dir=C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n -resource-dir C:/llvm-mingw-64/lib/clang/19 -dependency-file "CMakeFiles\\\\cmTC_b4973.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_b4973.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/llvm-mingw-64/lib/clang/19/include -internal-isystem C:/llvm-mingw-64/x86_64-w64-mingw32/include -internal-isystem C:/llvm-mingw-64/x86_64-w64-mingw32/usr/include -internal-isystem C:/llvm-mingw-64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_b4973.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.31\\\\Modules\\\\CMakeCCompilerABI.c"
+        clang -cc1 version 19.1.6 based upon LLVM 19.1.6 default target x86_64-w64-mingw32
+        ignoring nonexistent directory "C:/llvm-mingw-64/x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/llvm-mingw-64/x86_64-w64-mingw32/usr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/llvm-mingw-64/lib/clang/19/include
+         C:/llvm-mingw-64/include
+        End of search list.
+        Linking C executable cmTC_b4973.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_b4973.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_b4973.dir/objects.a
+        C:\\llvm-mingw-64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_b4973.dir/objects.a @CMakeFiles\\cmTC_b4973.dir\\objects1.rsp
+        C:\\llvm-mingw-64\\bin\\cc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_b4973.dir/objects.a -Wl,--no-whole-archive -o cmTC_b4973.exe -Wl,--out-implib,libcmTC_b4973.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        clang version 19.1.6 (https://github.com/llvm/llvm-project.git e21dc4bd5474d04b8e62d7331362edcc5648d7e5)
+        Target: x86_64-w64-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/llvm-mingw-64/bin
+        Configuration file: C:/llvm-mingw-64/bin/x86_64-w64-windows-gnu.cfg
+         "C:/llvm-mingw-64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_b4973.exe C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crt2.o C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/llvm-mingw-64/x86_64-w64-mingw32/lib -LC:/llvm-mingw-64/x86_64-w64-mingw32/mingw/lib -LC:/llvm-mingw-64/lib -LC:/llvm-mingw-64/lib/clang/19/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_b4973.dir/objects.a" --no-whole-archive --out-implib libcmTC_b4973.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtend.o
+        LLD 19.1.6 (https://github.com/llvm/llvm-project.git e21dc4bd5474d04b8e62d7331362edcc5648d7e5) (compatible with GNU linkers)
+        mingw32-make[1]: Leaving directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/llvm-mingw-64/lib/clang/19/include]
+          add: [C:/llvm-mingw-64/include]
+        end of search list found
+        collapse include dir [C:/llvm-mingw-64/lib/clang/19/include] ==> [C:/llvm-mingw-64/lib/clang/19/include]
+        collapse include dir [C:/llvm-mingw-64/include] ==> [C:/llvm-mingw-64/include]
+        implicit include dirs: [C:/llvm-mingw-64/lib/clang/19/include;C:/llvm-mingw-64/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/llvm-mingw-64/bin/mingw32-make.exe -f Makefile cmTC_b4973/fast]
+        ignore line: [C:/llvm-mingw-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b4973.dir\\build.make CMakeFiles/cmTC_b4973.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n']
+        ignore line: [Building C object CMakeFiles/cmTC_b4973.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\llvm-mingw-64\\bin\\cc.exe   -v -MD -MT CMakeFiles/cmTC_b4973.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_b4973.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_b4973.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [clang version 19.1.6 (https://github.com/llvm/llvm-project.git e21dc4bd5474d04b8e62d7331362edcc5648d7e5)]
+        ignore line: [Target: x86_64-w64-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/llvm-mingw-64/bin]
+        ignore line: [Configuration file: C:/llvm-mingw-64/bin/x86_64-w64-windows-gnu.cfg]
+        ignore line: [ (in-process)]
+        ignore line: [ "C:/llvm-mingw-64/bin/clang-19.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -fno-sized-deallocation -fno-use-init-array -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n -v -fcoverage-compilation-dir=C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-wqtq9n -resource-dir C:/llvm-mingw-64/lib/clang/19 -dependency-file "CMakeFiles\\\\cmTC_b4973.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_b4973.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/llvm-mingw-64/lib/clang/19/include -internal-isystem C:/llvm-mingw-64/x86_64-w64-mingw32/include -internal-isystem C:/llvm-mingw-64/x86_64-w64-mingw32/usr/include -internal-isystem C:/llvm-mingw-64/include -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=seh -faddrsig -o "CMakeFiles\\\\cmTC_b4973.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.31\\\\Modules\\\\CMakeCCompilerABI.c"]
+        ignore line: [clang -cc1 version 19.1.6 based upon LLVM 19.1.6 default target x86_64-w64-mingw32]
+        ignore line: [ignoring nonexistent directory "C:/llvm-mingw-64/x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "C:/llvm-mingw-64/x86_64-w64-mingw32/usr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/llvm-mingw-64/lib/clang/19/include]
+        ignore line: [ C:/llvm-mingw-64/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_b4973.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_b4973.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_b4973.dir/objects.a]
+        ignore line: [C:\\llvm-mingw-64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_b4973.dir/objects.a @CMakeFiles\\cmTC_b4973.dir\\objects1.rsp]
+        ignore line: [C:\\llvm-mingw-64\\bin\\cc.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_b4973.dir/objects.a -Wl --no-whole-archive -o cmTC_b4973.exe -Wl --out-implib libcmTC_b4973.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [clang version 19.1.6 (https://github.com/llvm/llvm-project.git e21dc4bd5474d04b8e62d7331362edcc5648d7e5)]
+        ignore line: [Target: x86_64-w64-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/llvm-mingw-64/bin]
+        ignore line: [Configuration file: C:/llvm-mingw-64/bin/x86_64-w64-windows-gnu.cfg]
+        link line: [ "C:/llvm-mingw-64/bin/ld.lld" -m i386pep -Bdynamic -o cmTC_b4973.exe C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crt2.o C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtbegin.o -LC:/llvm-mingw-64/x86_64-w64-mingw32/lib -LC:/llvm-mingw-64/x86_64-w64-mingw32/mingw/lib -LC:/llvm-mingw-64/lib -LC:/llvm-mingw-64/lib/clang/19/lib/windows -v --whole-archive "CMakeFiles\\\\cmTC_b4973.dir/objects.a" --no-whole-archive --out-implib libcmTC_b4973.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a -lunwind -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtend.o]
+          arg [C:/llvm-mingw-64/bin/ld.lld] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_b4973.exe] ==> ignore
+          arg [C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crt2.o] ==> obj [C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crt2.o]
+          arg [C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtbegin.o] ==> obj [C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtbegin.o]
+          arg [-LC:/llvm-mingw-64/x86_64-w64-mingw32/lib] ==> dir [C:/llvm-mingw-64/x86_64-w64-mingw32/lib]
+          arg [-LC:/llvm-mingw-64/x86_64-w64-mingw32/mingw/lib] ==> dir [C:/llvm-mingw-64/x86_64-w64-mingw32/mingw/lib]
+          arg [-LC:/llvm-mingw-64/lib] ==> dir [C:/llvm-mingw-64/lib]
+          arg [-LC:/llvm-mingw-64/lib/clang/19/lib/windows] ==> dir [C:/llvm-mingw-64/lib/clang/19/lib/windows]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\\\cmTC_b4973.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_b4973.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a] ==> lib [C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a]
+          arg [-lunwind] ==> lib [unwind]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a] ==> lib [C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a]
+          arg [-lunwind] ==> lib [unwind]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtend.o] ==> obj [C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtend.o]
+        linker tool for 'C': C:/llvm-mingw-64/bin/ld.lld
+        remove lib [C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a]
+        remove lib [msvcrt]
+        remove lib [C:/llvm-mingw-64/lib/clang/19/lib/windows/libclang_rt.builtins-x86_64.a]
+        remove lib [msvcrt]
+        collapse library dir [C:/llvm-mingw-64/x86_64-w64-mingw32/lib] ==> [C:/llvm-mingw-64/x86_64-w64-mingw32/lib]
+        collapse library dir [C:/llvm-mingw-64/x86_64-w64-mingw32/mingw/lib] ==> [C:/llvm-mingw-64/x86_64-w64-mingw32/mingw/lib]
+        collapse library dir [C:/llvm-mingw-64/lib] ==> [C:/llvm-mingw-64/lib]
+        collapse library dir [C:/llvm-mingw-64/lib/clang/19/lib/windows] ==> [C:/llvm-mingw-64/lib/clang/19/lib/windows]
+        implicit libs: [mingw32;unwind;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;unwind;moldname;mingwex;kernel32]
+        implicit objs: [C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crt2.o;C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtbegin.o;C:/llvm-mingw-64/x86_64-w64-mingw32/lib/crtend.o]
+        implicit dirs: [C:/llvm-mingw-64/x86_64-w64-mingw32/lib;C:/llvm-mingw-64/x86_64-w64-mingw32/mingw/lib;C:/llvm-mingw-64/lib;C:/llvm-mingw-64/lib/clang/19/lib/windows]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the C compiler's linker: "C:/llvm-mingw-64/bin/ld.lld" "-v"
+      LLD 19.1.6 (https://github.com/llvm/llvm-project.git e21dc4bd5474d04b8e62d7331362edcc5648d7e5) (compatible with GNU linkers)
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-ngw7tg"
+      binary: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-ngw7tg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/eli12/dev/glfw-3.4/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-ngw7tg'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/llvm-mingw-64/bin/mingw32-make.exe -f Makefile cmTC_75306/fast
+        C:/llvm-mingw-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_75306.dir\\build.make CMakeFiles/cmTC_75306.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-ngw7tg'
+        Building C object CMakeFiles/cmTC_75306.dir/src.c.obj
+        C:\\llvm-mingw-64\\bin\\cc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -MD -MT CMakeFiles/cmTC_75306.dir/src.c.obj -MF CMakeFiles\\cmTC_75306.dir\\src.c.obj.d -o CMakeFiles\\cmTC_75306.dir\\src.c.obj -c C:\\Users\\eli12\\dev\\glfw-3.4\\CMakeFiles\\CMakeScratch\\TryCompile-ngw7tg\\src.c
+        Linking C executable cmTC_75306.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_75306.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_75306.dir/objects.a
+        C:\\llvm-mingw-64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_75306.dir/objects.a @CMakeFiles\\cmTC_75306.dir\\objects1.rsp
+        C:\\llvm-mingw-64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_75306.dir/objects.a -Wl,--no-whole-archive -o cmTC_75306.exe -Wl,--out-implib,libcmTC_75306.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_75306.dir\\linkLibs.rsp
+        ld.lld: error: undefined symbol: pthread_create
+        >>> referenced by objects.a(src.c.obj):(main)
+        
+        ld.lld: error: undefined symbol: pthread_detach
+        >>> referenced by objects.a(src.c.obj):(main)
+        
+        ld.lld: error: undefined symbol: pthread_cancel
+        >>> referenced by objects.a(src.c.obj):(main)
+        
+        ld.lld: error: undefined symbol: pthread_join
+        >>> referenced by objects.a(src.c.obj):(main)
+        
+        ld.lld: error: undefined symbol: pthread_exit
+        >>> referenced by objects.a(src.c.obj):(main)
+        clang-19: error: linker command failed with exit code 1 (use -v to see invocation)
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_75306.dir\\build.make:104: cmTC_75306.exe] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-ngw7tg'
+        mingw32-make: *** [Makefile:133: cmTC_75306/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-hlug4p"
+      binary: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-hlug4p"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/eli12/dev/glfw-3.4/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-hlug4p'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/llvm-mingw-64/bin/mingw32-make.exe -f Makefile cmTC_30a66/fast
+        C:/llvm-mingw-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_30a66.dir\\build.make CMakeFiles/cmTC_30a66.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-hlug4p'
+        Building C object CMakeFiles/cmTC_30a66.dir/CheckFunctionExists.c.obj
+        C:\\llvm-mingw-64\\bin\\cc.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_30a66.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_30a66.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles\\cmTC_30a66.dir\\CheckFunctionExists.c.obj -c C:\\Users\\eli12\\dev\\glfw-3.4\\CMakeFiles\\CMakeScratch\\TryCompile-hlug4p\\CheckFunctionExists.c
+        Linking C executable cmTC_30a66.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_30a66.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_30a66.dir/objects.a
+        C:\\llvm-mingw-64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_30a66.dir/objects.a @CMakeFiles\\cmTC_30a66.dir\\objects1.rsp
+        C:\\llvm-mingw-64\\bin\\cc.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\\cmTC_30a66.dir/objects.a -Wl,--no-whole-archive -o cmTC_30a66.exe -Wl,--out-implib,libcmTC_30a66.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_30a66.dir\\linkLibs.rsp
+        lld: error: unable to find library -lpthreads
+        clang-19: error: linker command failed with exit code 1 (use -v to see invocation)
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_30a66.dir\\build.make:104: cmTC_30a66.exe] Error 1
+        mingw32-make[1]: Leaving directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-hlug4p'
+        mingw32-make: *** [Makefile:133: cmTC_30a66/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-oqoxri"
+      binary: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-oqoxri"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/eli12/dev/glfw-3.4/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-oqoxri'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/llvm-mingw-64/bin/mingw32-make.exe -f Makefile cmTC_a2a46/fast
+        C:/llvm-mingw-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a2a46.dir\\build.make CMakeFiles/cmTC_a2a46.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-oqoxri'
+        Building C object CMakeFiles/cmTC_a2a46.dir/CheckFunctionExists.c.obj
+        C:\\llvm-mingw-64\\bin\\cc.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_a2a46.dir/CheckFunctionExists.c.obj -MF CMakeFiles\\cmTC_a2a46.dir\\CheckFunctionExists.c.obj.d -o CMakeFiles\\cmTC_a2a46.dir\\CheckFunctionExists.c.obj -c C:\\Users\\eli12\\dev\\glfw-3.4\\CMakeFiles\\CMakeScratch\\TryCompile-oqoxri\\CheckFunctionExists.c
+        Linking C executable cmTC_a2a46.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a2a46.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a2a46.dir/objects.a
+        C:\\llvm-mingw-64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_a2a46.dir/objects.a @CMakeFiles\\cmTC_a2a46.dir\\objects1.rsp
+        C:\\llvm-mingw-64\\bin\\cc.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\\cmTC_a2a46.dir/objects.a -Wl,--no-whole-archive -o cmTC_a2a46.exe -Wl,--out-implib,libcmTC_a2a46.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_a2a46.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-oqoxri'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "src/CMakeLists.txt:274 (check_include_file)"
+    checks:
+      - "Looking for dinput.h"
+    directories:
+      source: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-bgfukq"
+      binary: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-bgfukq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/eli12/dev/glfw-3.4/CMake/modules"
+    buildResult:
+      variable: "DINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-bgfukq'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/llvm-mingw-64/bin/mingw32-make.exe -f Makefile cmTC_dfa9a/fast
+        C:/llvm-mingw-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_dfa9a.dir\\build.make CMakeFiles/cmTC_dfa9a.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-bgfukq'
+        Building C object CMakeFiles/cmTC_dfa9a.dir/CheckIncludeFile.c.obj
+        C:\\llvm-mingw-64\\bin\\cc.exe    -MD -MT CMakeFiles/cmTC_dfa9a.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_dfa9a.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles\\cmTC_dfa9a.dir\\CheckIncludeFile.c.obj -c C:\\Users\\eli12\\dev\\glfw-3.4\\CMakeFiles\\CMakeScratch\\TryCompile-bgfukq\\CheckIncludeFile.c
+        Linking C executable cmTC_dfa9a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_dfa9a.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_dfa9a.dir/objects.a
+        C:\\llvm-mingw-64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_dfa9a.dir/objects.a @CMakeFiles\\cmTC_dfa9a.dir\\objects1.rsp
+        C:\\llvm-mingw-64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_dfa9a.dir/objects.a -Wl,--no-whole-archive -o cmTC_dfa9a.exe -Wl,--out-implib,libcmTC_dfa9a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_dfa9a.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-bgfukq'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "src/CMakeLists.txt:275 (check_include_file)"
+    checks:
+      - "Looking for xinput.h"
+    directories:
+      source: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-gqi5xn"
+      binary: "C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-gqi5xn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/eli12/dev/glfw-3.4/CMake/modules"
+    buildResult:
+      variable: "XINPUT_H_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-gqi5xn'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/llvm-mingw-64/bin/mingw32-make.exe -f Makefile cmTC_017d1/fast
+        C:/llvm-mingw-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_017d1.dir\\build.make CMakeFiles/cmTC_017d1.dir/build
+        mingw32-make[1]: Entering directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-gqi5xn'
+        Building C object CMakeFiles/cmTC_017d1.dir/CheckIncludeFile.c.obj
+        C:\\llvm-mingw-64\\bin\\cc.exe    -MD -MT CMakeFiles/cmTC_017d1.dir/CheckIncludeFile.c.obj -MF CMakeFiles\\cmTC_017d1.dir\\CheckIncludeFile.c.obj.d -o CMakeFiles\\cmTC_017d1.dir\\CheckIncludeFile.c.obj -c C:\\Users\\eli12\\dev\\glfw-3.4\\CMakeFiles\\CMakeScratch\\TryCompile-gqi5xn\\CheckIncludeFile.c
+        Linking C executable cmTC_017d1.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_017d1.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_017d1.dir/objects.a
+        C:\\llvm-mingw-64\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_017d1.dir/objects.a @CMakeFiles\\cmTC_017d1.dir\\objects1.rsp
+        C:\\llvm-mingw-64\\bin\\cc.exe -Wl,--whole-archive CMakeFiles\\cmTC_017d1.dir/objects.a -Wl,--no-whole-archive -o cmTC_017d1.exe -Wl,--out-implib,libcmTC_017d1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_017d1.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'C:/Users/eli12/dev/glfw-3.4/CMakeFiles/CMakeScratch/TryCompile-gqi5xn'
+        
+      exitCode: 0
+...

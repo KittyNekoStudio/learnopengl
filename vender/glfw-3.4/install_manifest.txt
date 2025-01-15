@@ -1,0 +1,8 @@
+C:/mingw64/x86_64-w64-mingw32/lib/libglfw3.a
+C:/mingw64/x86_64-w64-mingw32/include/GLFW/glfw3.h
+C:/mingw64/x86_64-w64-mingw32/include/GLFW/glfw3native.h
+C:/mingw64/x86_64-w64-mingw32/lib/cmake/glfw3/glfw3Config.cmake
+C:/mingw64/x86_64-w64-mingw32/lib/cmake/glfw3/glfw3ConfigVersion.cmake
+C:/mingw64/x86_64-w64-mingw32/lib/cmake/glfw3/glfw3Targets.cmake
+C:/mingw64/x86_64-w64-mingw32/lib/cmake/glfw3/glfw3Targets-noconfig.cmake
+C:/mingw64/x86_64-w64-mingw32/lib/pkgconfig/glfw3.pc

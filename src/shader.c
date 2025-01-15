@@ -17,9 +17,6 @@ char* FileToString(FILE* file) {
         return NULL;
     }
 
-    // TODO! buffersize != bytesRead
-    printf("%i", fileSize);
-
     size_t bytesRead = fread(buffer, 1, fileSize, file);
     if (bytesRead != fileSize) {
         printf("BYTESREAD != FILE SIZE\n");
