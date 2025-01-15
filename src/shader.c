@@ -17,6 +17,9 @@ char* FileToString(FILE* file) {
         return NULL;
     }
 
+    // TODO! buffersize != bytesRead
+    printf("%i", fileSize);
+
     size_t bytesRead = fread(buffer, 1, fileSize, file);
     if (bytesRead != fileSize) {
         printf("BYTESREAD != FILE SIZE\n");
@@ -30,7 +33,7 @@ char* FileToString(FILE* file) {
 }
 
 Shader InitShader(const char* vertexPath, const char* fragmentPath) {
-    FILE* vertexShaderFile = fopen(vertexPath, "r");
+    FILE* vertexShaderFile = fopen(vertexPath, "rb");
 
     if (vertexShaderFile == NULL) {
         printf("FAILED TO OPEN VERTEX SHADER\n");
@@ -39,7 +42,7 @@ Shader InitShader(const char* vertexPath, const char* fragmentPath) {
         return nullShader;
     }
 
-    FILE* fragmentShaderFile = fopen(fragmentPath, "r");
+    FILE* fragmentShaderFile = fopen(fragmentPath, "rb");
 
     if (fragmentShaderFile == NULL) {
         printf("FAILED TO OPEN FRAGMENT SHADER\n");

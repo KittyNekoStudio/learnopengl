@@ -1,4 +1,5 @@
 #pragma once
+#include <stdbool.h>
 
 typedef struct Shader {
     unsigned int ID;
