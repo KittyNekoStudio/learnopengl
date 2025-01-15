@@ -17,7 +17,7 @@ static void processInput(GLFWwindow* window) {
 	}
 }
 
-static void setColorBlueOrRedOrGreen(GLFWwindow* window) {
+static void setClearColor(GLFWwindow* window) {
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
 		glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
 	} else if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS) {
@@ -106,9 +106,10 @@ int main() {
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 
-	unsigned int texture;
-	glGenTextures(1, &texture);
-	glBindTexture(GL_TEXTURE_2D, texture);
+	unsigned int texture0;
+	glGenTextures(1, &texture0);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texture0);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -116,27 +117,62 @@ int main() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	
-	int width, height, nrChannels;
-	unsigned char* data = stbi_load("../container.jpg", &width, &height, &nrChannels, 0);
+	int width0, height0, nrChannels0;
 
-	if (data) {
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+	stbi_set_flip_vertically_on_load(true);
+
+	unsigned char* data0 = stbi_load("../container.jpg", &width0, &height0, &nrChannels0, 0);
+
+	if (data0) {
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width0, height0, 0, GL_RGB, GL_UNSIGNED_BYTE, data0);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	} else {
-		printf("Failed to load texture.\n");
+		printf("Failed to load texture0.\n");
 	}
 
-	stbi_image_free(data);
+	stbi_image_free(data0);
+
+	unsigned int texture1;
+	glGenTextures(1, &texture1);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, texture1);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	
+	int width1, height1, nrChannels1;
+	unsigned char* data1 = stbi_load("../awesomeface.png", &width1, &height1, &nrChannels1, 0);
+
+	if (data1) {
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width1, height1, 0, GL_RGBA, GL_UNSIGNED_BYTE, data1);
+		glGenerateMipmap(GL_TEXTURE_2D);
+	} else {
+		printf("Failed to load texture1\n");
+	}
+
+	stbi_image_free(data1);
+
+	UseShader(&myShaders);	
+	SetUniformInt(&myShaders, "texture0", 0);
+	SetUniformInt(&myShaders, "texture1", 1);
 
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	while (!glfwWindowShouldClose(window)) {
 		processInput(window);
 
-		setColorBlueOrRedOrGreen(window);
+		setClearColor(window);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		glBindTexture(GL_TEXTURE_2D, texture);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, texture0);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, texture1);
+	
 		UseShader(&myShaders);	
+
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
