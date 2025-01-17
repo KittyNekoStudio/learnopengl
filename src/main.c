@@ -119,7 +119,7 @@ int main() {
 	
 	int width0, height0, nrChannels0;
 
-	//stbi_set_flip_vertically_on_load(true);
+  	//stbi_set_flip_vertically_on_load(true);
 
 	unsigned char* data0 = stbi_load("../container.jpg", &width0, &height0, &nrChannels0, 0);
 
@@ -173,20 +173,6 @@ int main() {
 		glBindTexture(GL_TEXTURE_2D, texture1);
 	
 		UseShader(&myShaders);	
-
-		if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS) {
-			value += 0.001;
-		} else if (glfwGetKey(window, GLFW_KEY_I) == GLFW_PRESS) {
-			value -= 0.001;
-		}
-
-		if (value > 1.0) {
-			value = 1.0;
-		} else if (value < -1.0) {
-			value = -1.0;
-		}
-
-		SetUniformFloat(&myShaders, "trans", value);
 
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
