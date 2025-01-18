@@ -1,7 +1,7 @@
-prefix=C:/mingw64/x86_64-w64-mingw32
+prefix=C:/Program Files (x86)/project
 exec_prefix=${prefix}
-includedir=C:/mingw64/x86_64-w64-mingw32/include
-libdir=C:/mingw64/x86_64-w64-mingw32/lib
+includedir=C:/Program Files (x86)/project/include
+libdir=C:/Program Files (x86)/project/lib
 
 Name: GLFW
 Description: A multi-platform library for OpenGL, window and input

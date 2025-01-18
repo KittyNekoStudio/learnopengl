@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/eli12/dev/glfw-3.4/docs
+# Install script for directory: C:/Users/eli12/dev/learnopengl/vender/glfw-3.4/docs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/mingw64/x86_64-w64-mingw32")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/project")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,12 +34,12 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/llvm-mingw-64/bin/llvm-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/msys64/ucrt64/bin/objdump.exe")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/eli12/dev/glfw-3.4/docs/install_local_manifest.txt"
+  file(WRITE "C:/Users/eli12/dev/learnopengl/vender/glfw-3.4/docs/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

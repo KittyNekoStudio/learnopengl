@@ -3,6 +3,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <cglm/cglm.h>
 
 #include "shader.h"
 #include "stb_image.h"
@@ -63,10 +64,10 @@ int main() {
 
 	float vertices[] = {
 		// Positions	      // Colors			   // Texture cords
-		0.5f,  0.5f, 0.0f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f, // Top right
-		0.5f, -0.5f, 0.0f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f, // Bottom right
-	   -0.5f, -0.5f, 0.0f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f, // Bottom left
-	   -0.5f,  0.5f, 0.0f,    1.0f, 1.0f, 0.0f,    0.0f, 1.0f, // Top left
+		0.5f,  0.5f, 0.0f,    1.0f, 1.0f, // Top right
+		0.5f, -0.5f, 0.0f,    1.0f, 0.0f, // Bottom right
+	   -0.5f, -0.5f, 0.0f,    0.0f, 0.0f, // Bottom left
+	   -0.5f,  0.5f, 0.0f,    0.0f, 1.0f, // Top left
 	};
 
 	int indices[] = {
@@ -92,16 +93,12 @@ int main() {
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 	// Position attribute
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
 	// Color attribute
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
-
-	// Color attribute
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-	glEnableVertexAttribArray(2);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
@@ -111,15 +108,13 @@ int main() {
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture0);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	
 	int width0, height0, nrChannels0;
-
-  	//stbi_set_flip_vertically_on_load(true);
 
 	unsigned char* data0 = stbi_load("../container.jpg", &width0, &height0, &nrChannels0, 0);
 
@@ -159,7 +154,7 @@ int main() {
 	SetUniformInt(&myShaders, "texture0", 0);
 	SetUniformInt(&myShaders, "texture1", 1);
 
-	float value = 0;
+
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	while (!glfwWindowShouldClose(window)) {
 		processInput(window);
@@ -171,8 +166,16 @@ int main() {
 		glBindTexture(GL_TEXTURE_2D, texture0);
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, texture1);
-	
+		
+		mat4 trans;
+		glm_mat4_identity(trans);
+		glm_translate(trans, (vec3){0.5f, -0.5f, 0.0f});
+		glm_rotate_z(trans, glfwGetTime(), trans);
+		
 		UseShader(&myShaders);	
+
+		unsigned int transformLoc = glGetUniformLocation(myShaders.ID, "transform");
+	        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, (float*)trans);
 
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
