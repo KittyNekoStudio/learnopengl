@@ -180,6 +180,15 @@ int main() {
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
+		glm_mat4_identity(trans);
+		glm_translate(trans, (vec3){-0.5f, 0.5f, 0.0f});
+		float scaleAmount = (float)sin(glfwGetTime());
+		glm_scale(trans, (vec3){scaleAmount, scaleAmount, scaleAmount});
+
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, (float*)trans);
+
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
