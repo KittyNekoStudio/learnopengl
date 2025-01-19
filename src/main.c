@@ -13,7 +13,7 @@ static void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 
 static void processInput(GLFWwindow* window) {
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+	if (glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS) {
 		glfwSetWindowShouldClose(window, true);
 	}
 }
@@ -63,7 +63,7 @@ int main() {
 	}
 
 	float vertices[] = {
-		// Positions	      // Colors			   // Texture cords
+		// Positions	      // Texture cords
 		0.5f,  0.5f, 0.0f,    1.0f, 1.0f, // Top right
 		0.5f, -0.5f, 0.0f,    1.0f, 0.0f, // Bottom right
 	   -0.5f, -0.5f, 0.0f,    0.0f, 0.0f, // Bottom left
@@ -96,8 +96,8 @@ int main() {
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	// Color attribute
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+	// TexCord attribute
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -166,16 +166,16 @@ int main() {
 		glBindTexture(GL_TEXTURE_2D, texture0);
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, texture1);
-		
+
 		mat4 trans;
 		glm_mat4_identity(trans);
 		glm_translate(trans, (vec3){0.5f, -0.5f, 0.0f});
 		glm_rotate_z(trans, glfwGetTime(), trans);
-		
+	
 		UseShader(&myShaders);	
 
 		unsigned int transformLoc = glGetUniformLocation(myShaders.ID, "transform");
-	        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, (float*)trans);
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, (float*)trans);
 
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
