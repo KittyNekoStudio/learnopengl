@@ -10,6 +10,15 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
+    const gl_bindings = @import("zigglgen").generateBindingsModule(b, .{
+        .api = .gl,
+        .version = .@"3.3",
+        .profile = .core,
+        .extensions = &.{ .ARB_clip_control, .NV_scissor_exclusive },
+    });
+
+    exe_mod.addImport("gl", gl_bindings);
+
     const exe = b.addExecutable(.{
         .name = "opengl",
         .root_module = exe_mod,
@@ -17,7 +26,7 @@ pub fn build(b: *std.Build) void {
 
     exe.linkLibC();
     exe.linkSystemLibrary("glfw3");
-    exe.linkSystemLibrary("GL");
+    //exe.linkSystemLibrary("GL");
 
     b.installArtifact(exe);
 
