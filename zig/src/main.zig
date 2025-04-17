@@ -76,7 +76,17 @@ pub fn main() !void {
 
     gl.Viewport(0, 0, width, height);
 
-    const vertices = [_]f32{ -0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0 };
+    const vertices = [_]f32{
+        0.5, 0.5, 0.0, // Top right
+        0.5, -0.5, 0.0, // Bottom right
+        -0.5, -0.5, 0.0, // Bottom left
+        -0.5, 0.5, 0.0, // Top left
+    };
+
+    const indices = [_]u32{
+        0, 1, 3,
+        1, 2, 3,
+    };
 
     var vao: c_uint = undefined;
     gl.GenVertexArrays(1, (&vao)[0..1]);
@@ -86,13 +96,20 @@ pub fn main() !void {
     gl.GenBuffers(1, (&vbo)[0..1]);
     defer gl.DeleteBuffers(1, (&vbo)[0..1]);
 
+    var ebo: c_uint = undefined;
+    gl.GenBuffers(1, (&ebo)[0..1]);
+    defer gl.DeleteBuffers(1, (&ebo)[0..1]);
+
     gl.BindVertexArray(vao);
     defer gl.BindVertexArray(0);
 
     gl.BindBuffer(gl.ARRAY_BUFFER, vbo);
     defer gl.BindBuffer(gl.ARRAY_BUFFER, 0);
-
     gl.BufferData(gl.ARRAY_BUFFER, @sizeOf(f32) * vertices.len, &vertices, gl.STATIC_DRAW);
+
+    gl.BindBuffer(gl.ELEMENT_ARRAY_BUFFER, ebo);
+    defer gl.BindBuffer(gl.ELEMENT_ARRAY_BUFFER, 0);
+    gl.BufferData(gl.ELEMENT_ARRAY_BUFFER, @sizeOf(u32) * indices.len, &indices, gl.STATIC_DRAW);
 
     gl.VertexAttribPointer(0, 3, gl.FLOAT, gl.FALSE, 3 * @sizeOf(f32), 0);
     gl.EnableVertexAttribArray(0);
@@ -104,8 +121,12 @@ pub fn main() !void {
         gl.Clear(gl.COLOR_BUFFER_BIT);
 
         gl.UseProgram(shader_program);
+
         gl.BindVertexArray(vao);
-        gl.DrawArrays(gl.TRIANGLES, 0, 3);
+        defer gl.BindVertexArray(0);
+
+        //gl.DrawArrays(gl.TRIANGLES, 0, 6);
+        gl.DrawElements(gl.TRIANGLES, 6, gl.UNSIGNED_INT, 0);
 
         glfw.glfwSwapBuffers(window);
         glfw.glfwPollEvents();
